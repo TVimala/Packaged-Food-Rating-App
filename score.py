@@ -1,3 +1,4 @@
+import logging
 def calculate_score(nutrients):
     """
     Computes a Nutri-Score style health score with explanations!
@@ -68,4 +69,5 @@ def calculate_score(nutrients):
         band = "Yellow (C, Moderate)"
     else:
         band = "Red (D-E, Less Healthy)"
+    logging.info(f"Score: {score}, Band: {band}")
     return score, band, drivers, evidence
