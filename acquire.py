@@ -11,7 +11,6 @@ def get_product_by_barcode(barcode:str)->dict:
     Fetch product details from OpenFoodFacts using barcode.
     """
     url = f"https://world.openfoodfacts.org/api/v0/product/{barcode}.json"
-    logging.info(f"User looked up barcode: {barcode}")
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()

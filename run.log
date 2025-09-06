@@ -1,0 +1,92 @@
+2025-09-06 22:58:28,213 [INFO] === NEW RUN START ===
+2025-09-06 22:58:28,224 [INFO] === RUN COMPLETE ===
+
+2025-09-06 22:59:16,566 [INFO] === NEW RUN START ===
+2025-09-06 22:59:16,574 [INFO] === RUN COMPLETE ===
+
+2025-09-06 22:59:16,784 [INFO] === NEW RUN START ===
+2025-09-06 22:59:19,380 [INFO] [INGEST] Barcode lookup failed: 6941297434069
+2025-09-06 22:59:19,384 [INFO] === RUN COMPLETE ===
+
+2025-09-06 22:59:28,596 [INFO] === NEW RUN START ===
+2025-09-06 22:59:28,620 [INFO] === RUN COMPLETE ===
+
+2025-09-06 22:59:36,448 [INFO] === NEW RUN START ===
+2025-09-06 22:59:36,457 [INFO] === RUN COMPLETE ===
+
+2025-09-06 22:59:36,671 [INFO] === NEW RUN START ===
+2025-09-06 22:59:39,138 [INFO] [INGEST] Barcode lookup: 3017620429484  \u2192 Nutella
+2025-09-06 22:59:39,157 [INFO] [NORMALIZE] Product ingredients: ['sucre', 'huile de palme', 'noisettes 13', 'lait écrémé en poudre 8', '7', 'cacao maigre 7', '4', 'émulsifiants  lécithines  soja  vanilline']
+2025-09-06 22:59:39,157 [INFO] [NORMALIZE] Product nutrients: {'energy_kcal': 539.0, 'sugars_g': 56.3, 'salt_g': 0.107, 'fat_g': 30.9, 'saturated_fat_g': 10.6, 'fiber_g': 0, 'proteins_g': 6.3}
+2025-09-06 22:59:39,160 [INFO] === RUN COMPLETE ===
+
+2025-09-06 22:59:45,266 [INFO] === NEW RUN START ===
+2025-09-06 22:59:45,274 [INFO] [NORMALIZE] Product ingredients: ['sucre', 'huile de palme', 'noisettes 13', 'lait écrémé en poudre 8', '7', 'cacao maigre 7', '4', 'émulsifiants  lécithines  soja  vanilline']
+2025-09-06 22:59:45,275 [INFO] [NORMALIZE] Product nutrients: {'energy_kcal': 539.0, 'sugars_g': 56.3, 'salt_g': 0.107, 'fat_g': 30.9, 'saturated_fat_g': 10.6, 'fiber_g': 0, 'proteins_g': 6.3}
+2025-09-06 22:59:45,276 [INFO] [SCORE] Calculation started
+2025-09-06 22:59:45,280 [INFO] [SCORE] Result: 34, Band: Unhealthy, Grade: E
+2025-09-06 22:59:45,281 [INFO] [EXPLAIN] Drivers: ['Very high energy: 539.0 kcal/100g', 'High sugar content: 56.3 g/100g', 'High saturated fat: 10.6 g/100g', 'Good protein: 6.3 g/100g']
+2025-09-06 22:59:45,281 [INFO] [EXPLAIN] Evidence: ['Energy > 335 kcal/100g', 'Sugars > 45 g/100g', 'Saturated fat > 10 g/100g', 'Protein > 4.8 g/100g']
+2025-09-06 22:59:45,283 [INFO] === RUN COMPLETE ===
+
+2025-09-06 23:00:43,931 [INFO] === NEW RUN START ===
+2025-09-06 23:00:43,934 [INFO] === RUN COMPLETE ===
+
+2025-09-06 23:01:00,070 [INFO] === NEW RUN START ===
+2025-09-06 23:01:00,076 [INFO] === RUN COMPLETE ===
+
+2025-09-06 23:01:00,292 [INFO] === NEW RUN START ===
+2025-09-06 23:01:03,308 [INFO] [INGEST] Barcode lookup: 3017620429484  \u2192 Nutella
+2025-09-06 23:01:03,316 [INFO] [NORMALIZE] Product ingredients: ['sucre', 'huile de palme', 'noisettes 13', 'lait écrémé en poudre 8', '7', 'cacao maigre 7', '4', 'émulsifiants  lécithines  soja  vanilline']
+2025-09-06 23:01:03,317 [INFO] [NORMALIZE] Product nutrients: {'energy_kcal': 539.0, 'sugars_g': 56.3, 'salt_g': 0.107, 'fat_g': 30.9, 'saturated_fat_g': 10.6, 'fiber_g': 0, 'proteins_g': 6.3}
+2025-09-06 23:01:03,322 [INFO] === RUN COMPLETE ===
+
+2025-09-06 23:01:05,961 [INFO] === NEW RUN START ===
+2025-09-06 23:01:05,975 [INFO] [NORMALIZE] Product ingredients: ['sucre', 'huile de palme', 'noisettes 13', 'lait écrémé en poudre 8', '7', 'cacao maigre 7', '4', 'émulsifiants  lécithines  soja  vanilline']
+2025-09-06 23:01:05,975 [INFO] [NORMALIZE] Product nutrients: {'energy_kcal': 539.0, 'sugars_g': 56.3, 'salt_g': 0.107, 'fat_g': 30.9, 'saturated_fat_g': 10.6, 'fiber_g': 0, 'proteins_g': 6.3}
+2025-09-06 23:01:05,977 [INFO] [SCORE] Calculation started
+2025-09-06 23:01:05,982 [INFO] [SCORE] Result: 34, Band: Unhealthy, Grade: E
+2025-09-06 23:01:05,982 [INFO] [EXPLAIN] Drivers: ['Very high energy: 539.0 kcal/100g', 'High sugar content: 56.3 g/100g', 'High saturated fat: 10.6 g/100g', 'Good protein: 6.3 g/100g']
+2025-09-06 23:01:05,982 [INFO] [EXPLAIN] Evidence: ['Energy > 335 kcal/100g', 'Sugars > 45 g/100g', 'Saturated fat > 10 g/100g', 'Protein > 4.8 g/100g']
+2025-09-06 23:01:05,984 [INFO] === RUN COMPLETE ===
+
+2025-09-06 23:05:07,041 [INFO] === NEW RUN START ===
+2025-09-06 23:05:07,050 [INFO] [NORMALIZE] Product ingredients: ['sucre', 'huile de palme', 'noisettes 13', 'lait écrémé en poudre 8', '7', 'cacao maigre 7', '4', 'émulsifiants  lécithines  soja  vanilline']
+2025-09-06 23:05:07,051 [INFO] [NORMALIZE] Product nutrients: {'energy_kcal': 539.0, 'sugars_g': 56.3, 'salt_g': 0.107, 'fat_g': 30.9, 'saturated_fat_g': 10.6, 'fiber_g': 0, 'proteins_g': 6.3}
+2025-09-06 23:05:07,053 [INFO] === RUN COMPLETE ===
+
+2025-09-06 23:05:14,619 [INFO] === NEW RUN START ===
+2025-09-06 23:05:14,631 [INFO] [NORMALIZE] Product ingredients: ['sucre', 'huile de palme', 'noisettes 13', 'lait écrémé en poudre 8', '7', 'cacao maigre 7', '4', 'émulsifiants  lécithines  soja  vanilline']
+2025-09-06 23:05:14,631 [INFO] [NORMALIZE] Product nutrients: {'energy_kcal': 539.0, 'sugars_g': 56.3, 'salt_g': 0.107, 'fat_g': 30.9, 'saturated_fat_g': 10.6, 'fiber_g': 0, 'proteins_g': 6.3}
+2025-09-06 23:05:14,634 [INFO] === RUN COMPLETE ===
+
+2025-09-06 23:05:14,852 [INFO] === NEW RUN START ===
+2025-09-06 23:05:18,963 [INFO] [INGEST] Product search: coca-cola \u2192 Selected coca cola 0,5
+2025-09-06 23:05:18,973 [INFO] [NORMALIZE] Product ingredients: ['water', 'fructoseglucose syrup', 'carbon dioxide', 'colorant e150d', 'acid phosphoric acid', 'natural flavors', 'caffeine flavoring']
+2025-09-06 23:05:18,973 [INFO] [NORMALIZE] Product nutrients: {'energy_kcal': 42.0, 'sugars_g': 10.6, 'salt_g': 0, 'fat_g': 0, 'saturated_fat_g': 0, 'fiber_g': 0, 'proteins_g': 0}
+2025-09-06 23:05:18,977 [INFO] === RUN COMPLETE ===
+
+2025-09-06 23:05:23,231 [INFO] === NEW RUN START ===
+2025-09-06 23:05:23,241 [INFO] [NORMALIZE] Product ingredients: ['water', 'fructoseglucose syrup', 'carbon dioxide', 'colorant e150d', 'acid phosphoric acid', 'natural flavors', 'caffeine flavoring']
+2025-09-06 23:05:23,241 [INFO] [NORMALIZE] Product nutrients: {'energy_kcal': 42.0, 'sugars_g': 10.6, 'salt_g': 0, 'fat_g': 0, 'saturated_fat_g': 0, 'fiber_g': 0, 'proteins_g': 0}
+2025-09-06 23:05:23,242 [INFO] [SCORE] Calculation started
+2025-09-06 23:05:23,244 [INFO] [SCORE] Result: 66, Band: Lightly Healthy, Grade: B
+2025-09-06 23:05:23,245 [INFO] [EXPLAIN] Drivers: ['High sugar content: 10.6 g/100g']
+2025-09-06 23:05:23,245 [INFO] [EXPLAIN] Evidence: ['Sugars > 9 g/100g']
+2025-09-06 23:05:23,246 [INFO] === RUN COMPLETE ===
+
+2025-09-06 23:06:27,481 [INFO] === NEW RUN START ===
+2025-09-06 23:06:31,916 [INFO] [INGEST] Product search: coca-cola \u2192 Selected coca cola 0,5
+2025-09-06 23:06:31,923 [INFO] [NORMALIZE] Product ingredients: ['water', 'fructoseglucose syrup', 'carbon dioxide', 'colorant e150d', 'acid phosphoric acid', 'natural flavors', 'caffeine flavoring']
+2025-09-06 23:06:31,923 [INFO] [NORMALIZE] Product nutrients: {'energy_kcal': 42.0, 'sugars_g': 10.6, 'salt_g': 0, 'fat_g': 0, 'saturated_fat_g': 0, 'fiber_g': 0, 'proteins_g': 0}
+2025-09-06 23:06:31,926 [INFO] === RUN COMPLETE ===
+
+2025-09-06 23:06:50,740 [INFO] === NEW RUN START ===
+2025-09-06 23:06:50,749 [INFO] [NORMALIZE] Product ingredients: ['water', 'fructoseglucose syrup', 'carbon dioxide', 'colorant e150d', 'acid phosphoric acid', 'natural flavors', 'caffeine flavoring']
+2025-09-06 23:06:50,749 [INFO] [NORMALIZE] Product nutrients: {'energy_kcal': 42.0, 'sugars_g': 10.6, 'salt_g': 0, 'fat_g': 0, 'saturated_fat_g': 0, 'fiber_g': 0, 'proteins_g': 0}
+2025-09-06 23:06:50,750 [INFO] [SCORE] Calculation started
+2025-09-06 23:06:50,752 [INFO] [SCORE] Result: 66, Band: Lightly Healthy, Grade: B
+2025-09-06 23:06:50,752 [INFO] [EXPLAIN] Drivers: ['High sugar content: 10.6 g/100g']
+2025-09-06 23:06:50,753 [INFO] [EXPLAIN] Evidence: ['Sugars > 9 g/100g']
+2025-09-06 23:06:50,755 [INFO] === RUN COMPLETE ===
+

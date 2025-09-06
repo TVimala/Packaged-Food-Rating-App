@@ -23,17 +23,29 @@ st.markdown("""
 <style>
     .reportview-container { background: #16181b; }
     .sidebar .sidebar-content { background: #24262b; }
-    .stButton>button { background-color: #FFD600; color: #24262b; border:none; }
+    .stButton>button {
+        background-color: #FFD600;
+        color: #24262b;
+        border: none;
+        transition: 0.3s;
+    }
+    .stButton>button:hover {
+        background-color: #a38f00; /* darker yellow */
+        color: white !important;   /* white text on hover */
+    }
     .stRadio label { color: #ffd600; }
     .stExpander > .summary { color: #ffd600 !important; }
 </style>
 """, unsafe_allow_html=True)
-
 def color_band(band):
-    if "Green" in band: return "#40e600"
-    if "Yellow" in band: return "#ffd600"
-    return "#ff4545"
-
+    band_colors = {
+        "Healthy": "#40e600",          
+        "Lightly Healthy": "#99ff33", 
+        "Moderate": "#ffd600",         
+        "Less Healthy": "#ff9933",     
+        "Unhealthy": "#ff4545"         
+    }
+    return band_colors.get(band, "#ff4545")  
 # --- Session state ---
 if 'product' not in st.session_state: st.session_state.product = None
 if 'ingreds' not in st.session_state: st.session_state.ingreds = []
@@ -47,11 +59,9 @@ with st.sidebar:
     search_mode = st.radio(
         "Choose how you want to look up or analyze your food product:",
         ["Barcode", "Product Name", "Image URL"],
-        index=0,   # 👈 default is Barcode now
+        index=0,   
         label_visibility="collapsed"
     )
-
-# --- Example functions for each mode ---
 def search_by_barcode():
     st.info("🔍 Searching by Barcode... (implement logic here)")
 
@@ -138,7 +148,7 @@ if (st.session_state.nutri and st.session_state.ingreds) or st.session_state.pro
     if st.button("Analyze Health Score", key="score_button"):
         nutri = st.session_state.nutri
         log(f"[SCORE] Calculation started")
-        score, band, drivers, evidence = calculate_score(nutri)
+        score, grade,band, drivers, evidence = calculate_score(nutri)
         st.markdown(
             f"<h2 style='background-color:{color_band(band)}; color:#16181b; padding:0.4em 1em; border-radius:10px; text-align:center;'>{score} : {band}</h2>",
             unsafe_allow_html=True
@@ -146,7 +156,7 @@ if (st.session_state.nutri and st.session_state.ingreds) or st.session_state.pro
         with st.expander("Score Drivers & Evidence", expanded=True):
             for d, e in zip(drivers, evidence):
                 st.markdown(f"<div style='color:#ffd600'><b>{d}</b><br><i>{e}</i></div>", unsafe_allow_html=True)
-        log(f"[SCORE] Result: {score}, Band: {band}")
+        log(f"[SCORE] Result: {score}, Band: {band}, Grade: {grade}")
         log(f"[EXPLAIN] Drivers: {drivers}")
         log(f"[EXPLAIN] Evidence: {evidence}")
 
