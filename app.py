@@ -169,5 +169,4 @@ st.markdown(
     """<div style='color:#ffd600;font-size:1rem;margin-top:1.5em;'>Scoring based on Nutri-Score, UK FSA, and WHO guidelines.<br>See documentation for sources.</div>""", 
     unsafe_allow_html=True
 )
-
 log("=== RUN COMPLETE ===\n")

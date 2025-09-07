@@ -1,0 +1,5 @@
+[TRACE] Product = Nutella
+Step 1: acquire → raw nutrition data (energy=539, sugar=56.3, fat=30.9, saturated_fat=10.6, salt=0.107, fiber=0, proteins=6.3)
+Step 2: normalize → standardized floats
+Step 3: score → computed health_score=34
+Step 4: explain → Unhealthy (grade E, red band)

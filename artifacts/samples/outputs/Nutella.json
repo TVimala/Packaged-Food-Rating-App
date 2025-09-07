@@ -1,0 +1,45 @@
+{
+  "energy_kcal": 539,
+  "sugars_g": 56.3,
+  "salt_g": 0.107,
+  "fat_g": 30.9,
+  "saturated_fat_g": 10.6,
+  "fiber_g": 0,
+  "proteins_g": 6.3
+}
+
+{
+  "product_name": "Nutella",
+  "score": 34,
+  "band": "Unhealthy",
+  "grade": "E"
+}
+
+{
+  "explanation": {
+    "negative_points": {
+      "sugars": {
+        "points": 10,
+        "value": 56.3,
+        "thresholds": [4.5, 9, 13.5, 18, 22.5, 27, 31, 36, 40, 45]
+      },
+      "saturated_fat": {
+        "points": 6,
+        "value": 10.6,
+        "thresholds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      },
+      "fat": {
+        "points": 5,
+        "value": 30.9,
+        "thresholds": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+      }
+    },
+    "positive_points": {
+      "proteins": {
+        "points": 1,
+        "value": 6.3,
+        "thresholds": [1.6, 3.2, 4.8, 6.4, 8.0]
+      }
+    }
+  }
+}
