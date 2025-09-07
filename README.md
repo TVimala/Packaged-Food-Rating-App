@@ -2,16 +2,18 @@
 
 A Streamlit-based application to rate packaged foods by calculating a Health Score from nutrition information.  
 Users can search by Barcode, Product Name, or Image URL. The app standardizes nutrition data and computes a score (0–100) based on nutrients.
+
 ---
 
 ## 📄 Documentation
 
 For detailed step-by-step project documentation, see the full report here:  
-[Packaged-Food-Rating-App Documentation](docs/Packaged-Food-Rating-App-Docs.pdf)
+[Packaged-Food-Rating-App Documentation](docs\Packaged_Food_Rating_Docs.pdf)
 
 ## 🎬 Demo Video
 
 - [Watch Demo Video]()
+
 ---
 
 ### 🏗 High-Level Architecture
