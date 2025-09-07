@@ -1,0 +1,5 @@
+{
+  "tesseract_path": "D:/Tesseract/tesseract.exe",
+  "openfoodfacts_url": "https://world.openfoodfacts.org/api/v0/product",
+  "ocr_languages": ["eng"]
+}
