@@ -1,8 +1,8 @@
 # Packaged-Food-Rating-App
 
 A Streamlit-based application to rate packaged foods by calculating a Health Score from nutrition information.  
-Users can search by Barcode, Product Name, or Image URL. The app standardizes nutrition data and computes a score (0–100) based on sugar, fat, and salt content.
-
+Users can search by Barcode, Product Name, or Image URL. The app standardizes nutrition data and computes a score (0–100) based on nutrients.
+Demo-Video:
 ---
 
 ### 🏗 High-Level Architecture
@@ -14,7 +14,7 @@ Users can search by Barcode, Product Name, or Image URL. The app standardizes nu
     (fetch raw)      (standardize)      (compute)      (Streamlit)
 ```
 
-## 📦 Repository Contents
+## Repository Contents
 
 ```
 Packaged-Food-Rating-App/
@@ -109,7 +109,7 @@ Packaged-Food-Rating-App/
 
 ---
 
-## 🗂 Sample Output
+## Sample Output
 
 ```json
 {
@@ -143,7 +143,7 @@ Packaged-Food-Rating-App/
 }
 ```
 ---
-
+<!-- 
 ### 🗂 Run Artifacts
 
 This repository includes:
@@ -152,7 +152,7 @@ This repository includes:
 - `samples/outputs/` → JSON/CSV outputs for 3 example products.
 - `samples/screenshots/` → Screenshots of the UI showing results.
 
----
+--- -->
 
 ### ⚙️ Installation & Setup
 
