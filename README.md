@@ -48,8 +48,17 @@ Users can search by Barcode, Product Name, or Image URL. The app standardizes nu
 #### `app.py`
 - Integrates all modules
 - Provides Streamlit UI for user interaction
-- Logs events into `logs/app_log.txt`
+- Logs events into `run.log`
 
+---
+### 🗂 Run Artifacts
+
+This repository includes:
+- `run.log` → Full run logs from the last execution.
+- `trace_example.txt` → Short trace of a single run (ingest → normalize → score → explain).
+- `samples/outputs/` → JSON/CSV outputs for 3 example products.
+- `samples/screenshots/` → Screenshots of the UI showing results.
+<!-- - `REFERENCES.md` → Source/Reference manifest (databases used, limitations). -->
 ---
 
 ### 📊 Scoring Design
@@ -116,6 +125,13 @@ If product data looks stale:
   ```
 - Logs will show fresh acquisition steps.
 
+---
+
+### 🚧 Limitations & Future Work
+- Some products may not have barcodes in OpenFoodFacts.
+- OCR may miss text in blurry/curved packaging images.
+- Scoring is simplified (not a medical substitute).
+- Future: add support for multiple languages and offline caching.
 ---
 
 ### 📚 References & Citations
