@@ -8,11 +8,13 @@ Users can search by Barcode, Product Name, or Image URL. The app standardizes nu
 ## 📄 Documentation
 
 For detailed step-by-step project documentation, see the full report here:  
-[Documentation](docs\Packaged_Food_Rating_Docs.pdf)
+- [Documentation](docs/Packaged_Food_Rating_Docs.pdf)
 
 ## 🎬 Demo Video
 
 - [Watch Demo Video]()
+
+- [Live App Deployment]()
 
 ---
 
