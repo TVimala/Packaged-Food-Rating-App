@@ -45,7 +45,7 @@ def calculate_score(nutrients):
 
     # Added sugars – stronger penalty
     if added_sugars > 5:
-        penalty = min(10, int(added_sugars // 5))  # 1 point per 5g
+        penalty = min(10, int(added_sugars // 5))
         neg_points += penalty
         drivers.append(f"Added sugars: {added_sugars} g/100g")
         evidence.append("WHO: limit added sugar < 10% of daily energy")
@@ -75,7 +75,6 @@ def calculate_score(nutrients):
         evidence.append("Based on NOVA classification: avoid UPFs")
 
     # --- POSITIVE POINTS ---
-
     # Fiber
     for threshold, pts in [(4.7, 5), (3.7, 4), (2.8, 3), (1.9, 2), (0.9, 1)]:
         if fiber > threshold:
@@ -92,7 +91,7 @@ def calculate_score(nutrients):
             evidence.append(f"Protein > {threshold} g/100g")
             break
 
-    # Fruit/Vegetable %
+    # Fruit/Vegetables content
     if fruit_pct >= 80:
         pos_points += 5
         drivers.append(f"High fruit/veg content: {fruit_pct}%")
@@ -124,5 +123,4 @@ def calculate_score(nutrients):
     else:
         band = "Unhealthy"
         grade = "E"
-
     return score_norm, grade, band, drivers, evidence

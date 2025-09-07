@@ -8,7 +8,6 @@
 2025-09-07 17:16:33,943 [INFO] [NORMALIZE] Product ingredients: ['sucre', 'huile de palme', 'noisettes 13', 'lait ï¿½crï¿½mï¿½ en poudre 8', '7', 'cacao maigre 7', '4', 'ï¿½mulsifiants  lï¿½cithines  soja  vanilline']
 2025-09-07 17:16:33,944 [INFO] [NORMALIZE] Product nutrients: {'energy_kcal': 539.0, 'sugars_g': 56.3, 'salt_g': 0.107, 'fat_g': 30.9, 'saturated_fat_g': 10.6, 'fiber_g': 0, 'proteins_g': 6.3}
 2025-09-07 17:16:33,946 [INFO] [SCORE] Calculation started
-2025-09-07 17:16:33,948 [INFO] [TRACE ERROR] Failed to write trace: 'charmap' codec can't encode character '\u2192' in position 16: character maps to <undefined>
 2025-09-07 17:16:33,953 [INFO] [SCORE] Result: 34, Band: Unhealthy, Grade: E
 2025-09-07 17:16:33,953 [INFO] [EXPLAIN] Drivers: ['Very high energy: 539.0 kcal/100g', 'High sugar content: 56.3 g/100g', 'High saturated fat: 10.6 g/100g', 'Good protein: 6.3 g/100g']
 2025-09-07 17:16:33,953 [INFO] [EXPLAIN] Evidence: ['Energy > 335 kcal/100g', 'Sugars > 45 g/100g', 'Saturated fat > 10 g/100g', 'Protein > 4.8 g/100g']
@@ -42,7 +41,7 @@
 
 2025-09-07 17:25:37,833 [INFO] === NEW RUN START ===
 2025-09-07 17:25:39,848 [INFO] [INGEST] OCR text extracted from URL: https://c8.alamy.com/comp/BA63M6/nutritional-label-on-food-packaging-for-ready-salted-crisps-BA63M6.jpg
-2025-09-07 17:25:39,848 [INFO] [NORMALIZE] Ingredients: ['typical nutritional values', 'per 25g pack per 100g', 'energy 550 kj 2200 kj', '133 kcal 530_ kcal', 'carbohydrate 123 g 490 g', 'of which sugars 01 g 05 g', 'fat 85 g 40 g', 'of which saturates 07 g 26 g', 'of which monounsaturates 68 g 70', 'of which polyunsaturates 07 g 29 g', 'fibre', 'sodium', 'equivalent as salt  04', 'per 25gbag 133 calories 85g fat', 'guideline daily amounts', 'tra  95  70g  70g', 'saturates   30g _ 20a  208', 'fibre 24g', 'salt ég_ 6e', 'average values for adults and children', 'individual requirements may vary']
+2025-09-07 17:25:39,848 [INFO] [NORMALIZE] Ingredients: ['typical nutritional values', 'per 25g pack per 100g', 'energy 550 kj 2200 kj', '133 kcal 530_ kcal', 'carbohydrate 123 g 490 g', 'of which sugars 01 g 05 g', 'fat 85 g 40 g', 'of which saturates 07 g 26 g', 'of which monounsaturates 68 g 70', 'of which polyunsaturates 07 g 29 g', 'fibre', 'sodium', 'equivalent as salt  04', 'per 25gbag 133 calories 85g fat', 'guideline daily amounts', 'tra  95  70g  70g', 'saturates   30g _ 20a  208', 'fibre 24g', 'salt ï¿½g_ 6e', 'average values for adults and children', 'individual requirements may vary']
 2025-09-07 17:25:39,848 [INFO] [NORMALIZE] Nutrients: {'energy_kcal': 133.0, 'fat_g': 8.5, 'salt_g': 24.0}
 2025-09-07 17:25:39,861 [INFO] === RUN COMPLETE ===
 

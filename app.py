@@ -17,7 +17,7 @@ log = logging.info
 
 # --- Streamlit setup ---
 st.set_page_config(page_title="Health Analyzer", layout="centered")
-st.markdown("<h2 style='color:#FFD600; text-align:center;'>Packaged Food Health Analyzer</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='color:#FFD600; text-align:center;'>Packaged Food Rating App</h2>", unsafe_allow_html=True)
 
 st.markdown("""
 <style>

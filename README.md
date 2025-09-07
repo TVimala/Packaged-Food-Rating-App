@@ -14,7 +14,9 @@ For detailed step-by-step project documentation, see the full report here:
 
 - [Watch Demo Video]()
 
-- [Live App Deployment]()
+## Deployed
+
+- **Live App:** [Packaged Food Rating App](https://packaged-food-rating-app.streamlit.app/)
 
 ---
 
