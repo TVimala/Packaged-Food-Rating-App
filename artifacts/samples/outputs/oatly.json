@@ -1,54 +1,57 @@
 {
-  "product_name": "Coca-Cola",
+  "product_name": "Oatly Oat Drink Barista Edition",
   "nutrients": {
-    "energy_kcal": 42,
-    "sugars_g": 10.6,
-    "salt_g": 0,
-    "fat_g": 0,
-    "saturated_fat_g": 0,
-    "fiber_g": 0,
-    "proteins_g": 0
+    "energy_kcal": 61,
+    "sugars_g": 3.4,
+    "salt_g": 0.0975,
+    "fat_g": 3,
+    "saturated_fat_g": 0.3,
+    "fiber_g": 0.8,
+    "proteins_g": 1.1
   },
   "score": {
-    "value": 66,
+    "value": 70,
     "band": "Lightly Healthy",
     "grade": "B"
   },
   "explanation": {
     "negative_points": {
       "sugars": {
-        "points": 10,
-        "value": 10.6,
+        "points": 1,
+        "value": 3.4,
         "thresholds": [4.5, 9, 13.5, 18, 22.5, 27, 31, 36, 40, 45]
       },
       "saturated_fat": {
         "points": 0,
-        "value": 0,
+        "value": 0.3,
         "thresholds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
       },
       "fat": {
         "points": 0,
-        "value": 0,
+        "value": 3,
         "thresholds": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
       },
       "salt": {
-        "points": 0,
-        "value": 0,
+        "points": 1,
+        "value": 0.0975,
         "thresholds": [0.09, 0.18, 0.27, 0.36, 0.45, 0.54, 0.63, 0.72, 0.81, 0.9]
       }
     },
     "positive_points": {
+      "proteins": {
+        "points": 1,
+        "value": 1.1,
+        "thresholds": [1.6, 3.2, 4.8, 6.4, 8.0]
+      },
       "fiber": {
         "points": 0,
-        "value": 0
-      },
-      "protein": {
-        "points": 0,
-        "value": 0
+        "value": 0.8,
+        "thresholds": [0.9, 1.9, 2.8, 3.7, 4.7]
       },
       "fruit_veg_pct": {
         "points": 0,
-        "value": 0
+        "value": 0,
+        "thresholds": [60, 80]
       }
     }
   }

@@ -3,3 +3,15 @@ Step 1: acquire → raw nutrition data (energy=539, sugar=56.3, fat=30.9, satura
 Step 2: normalize → standardized floats
 Step 3: score → computed health_score=34
 Step 4: explain → Unhealthy (grade E, red band)
+
+[TRACE] Product = Oatly Oat Drink Barista Edition
+Step 1: acquire → raw nutrition data (energy=61, sugar=3.4, fat=3, saturated_fat=0.3, salt=0.0975, fiber=0.8, proteins=1.1)
+Step 2: normalize → standardized floats
+Step 3: score → computed health_score=70
+Step 4: explain → Lightly Healthy (grade B, yellow-green band)
+
+[TRACE] Product = Ready Salted Crisps
+Step 1: acquire → raw nutrition data (energy=133, sugar=0, fat=8.5, saturated_fat=0, salt=24, fiber=0, proteins=0)
+Step 2: normalize → standardized floats
+Step 3: score → computed health_score=50
+Step 4: explain → Moderate (grade C, yellow band)

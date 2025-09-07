@@ -1,0 +1,58 @@
+{
+  "product_name": "Ready Salted Crisps",
+  "nutrients": {
+    "energy_kcal": 133.0,
+    "sugars_g": 0,
+    "salt_g": 24.0,
+    "fat_g": 8.5,
+    "saturated_fat_g": 0,
+    "fiber_g": 0,
+    "proteins_g": 0
+  },
+  "score": {
+    "value": 50,
+    "band": "Moderate",
+    "grade": "C"
+  },
+  "explanation": {
+    "negative_points": {
+      "sugars": {
+        "points": 0,
+        "value": 0,
+        "thresholds": [4.5, 9, 13.5, 18, 22.5, 27, 31, 36, 40, 45]
+      },
+      "saturated_fat": {
+        "points": 0,
+        "value": 0,
+        "thresholds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      },
+      "fat": {
+        "points": 3,
+        "value": 8.5,
+        "thresholds": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+      },
+      "salt": {
+        "points": 10,
+        "value": 24.0,
+        "thresholds": [0.09, 0.18, 0.27, 0.36, 0.45, 0.54, 0.63, 0.72, 0.81, 0.9]
+      }
+    },
+    "positive_points": {
+      "proteins": {
+        "points": 0,
+        "value": 0,
+        "thresholds": [1.6, 3.2, 4.8, 6.4, 8.0]
+      },
+      "fiber": {
+        "points": 0,
+        "value": 0,
+        "thresholds": [0.9, 1.9, 2.8, 3.7, 4.7]
+      },
+      "fruit_veg_pct": {
+        "points": 0,
+        "value": 0,
+        "thresholds": [60, 80]
+      }
+    }
+  }
+}

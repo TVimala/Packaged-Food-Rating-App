@@ -132,12 +132,23 @@ elif search_mode == "Image URL":
             ingreds = [normalize_ingredient(i) for i in re.split(r',|\n|;', ocr_text) if i.strip()]
             nutri = extract_nutrition_from_text(ocr_text)
             nutri = {k: (v or 0) for k, v in nutri.items()}
+            
+            # Update session state
             st.session_state.product = None
             st.session_state.ingreds = ingreds
             st.session_state.nutri = nutri
+            
+            # Logging
             log(f"[INGEST] OCR text extracted from URL: {img_url}")
             log(f"[NORMALIZE] Ingredients: {ingreds}")
             log(f"[NORMALIZE] Nutrients: {nutri}")
+            
+            # --- Display OCR results ---
+            st.markdown("<h4 style='color:#FFD600;'>Extracted & Normalized Ingredients:</h4>", unsafe_allow_html=True)
+            st.write(ingreds or "No ingredient info detected.")
+            
+            st.markdown("<h4 style='color:#FFD600;'>Extracted Nutritional Information:</h4>", unsafe_allow_html=True)
+            st.write(nutri or "No nutritional info detected.")
 
 # --- Display product details & normalize ---
 if st.session_state.product:
