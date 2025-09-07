@@ -93,7 +93,6 @@ if search_mode == "Barcode":
             else:
                 log(f"[INGEST] Barcode lookup failed: {barcode}")
                 st.error("No product found.")
-
 # --- Product name search ---
 elif search_mode == "Product Name":
     query = st.sidebar.text_input("Enter product name:")
@@ -101,13 +100,25 @@ elif search_mode == "Product Name":
         with st.spinner("Searching products..."):
             results = search_product_name(query, page_size=3)
             if results:
-                options = [f"{p.get('product_name', 'No name')} [{p.get('brands', 'No brand')}]" for p in results]
-                idx = st.radio("Select product below:", range(len(options)), format_func=lambda i: options[i])
-                product = results[idx]
+                # Display product images and options
+                options = []
+                for p in results:
+                    # Create label with product name + brand
+                    label = f"{p.get('product_name', 'No Name')} [{p.get('brands', 'No Brand')}]"
+                    options.append(label)
+
+                # One radio for all products
+                selected_idx = st.radio("Select a product:", range(len(options)), format_func=lambda i: options[i])
+                
+                # Access the selected product data
+                product = results[selected_idx]
                 st.session_state.product = product
+
+                # Display selected product image & info
                 st.success(f"Selected: {product.get('product_name', '')}")
                 st.image(product.get('image_url', ""), width=240)
                 log(f"[INGEST] Product search: {query} → Selected {product.get('product_name', '')}")
+
             else:
                 log(f"[INGEST] Product search failed: {query}")
                 st.error("No products found.")
