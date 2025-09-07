@@ -12,7 +12,7 @@ For detailed step-by-step project documentation, see the full report here:
 
 ## 🎬 Demo Video
 
-- [Watch Demo Video]()
+- [Watch Demo Video](https://drive.google.com/file/d/1e_QVt3vjpKaqzW7fsH-qutpQ7pkIcTv1/view?usp=sharing)
 
 ## Deployed
 

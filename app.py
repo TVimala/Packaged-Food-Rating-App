@@ -190,24 +190,6 @@ if (st.session_state.nutri and st.session_state.ingreds) or st.session_state.pro
             f"<h2 style='background-color:{color_band(band)}; color:#16181b; padding:0.4em 1em; border-radius:10px; text-align:center;'>{score} : {band}</h2>",
             unsafe_allow_html=True
         )
-
-        # # --- Generate trace_example.txt ---
-        # try:
-        #     product_name = st.session_state.product.get("product_name", "OCR Input") if st.session_state.product else "OCR Input"
-
-        #     with open("trace_example.txt", "w") as f:
-        #         f.write(f"Product = {product_name}\n")
-        #         f.write("Step 1: acquire → raw nutrition data\n")
-        #         f.write(str(st.session_state.raw_nutrition_data if "raw_nutrition_data" in st.session_state else "N/A") + "\n")
-        #         f.write("Step 2: normalize → standardized floats\n")
-        #         f.write(str(st.session_state.normalized_nutrition if "normalized_nutrition" in st.session_state else "N/A") + "\n")
-        #         f.write("Step 3: score → computed health_score = " + str(score) + "\n")
-        #         f.write(f"Step 4: explain → {band} (grade {grade})\n")
-        #         f.write("Drivers / Evidence:\n")
-        #         f.write(str(drivers) + "\n")
-        #         f.write(str(evidence) + "\n")
-        # except Exception as e:
-        #     log(f"[TRACE ERROR] Failed to write trace: {e}")
         
         # Explanation panel
         with st.expander("Score Drivers & Evidence", expanded=True):
