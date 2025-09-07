@@ -14,43 +14,136 @@ Users can search by Barcode, Product Name, or Image URL. The app standardizes nu
     (fetch raw)      (standardize)      (compute)      (Streamlit)
 ```
 
+## 📦 Repository Contents
+
+```
+Packaged-Food-Rating-App/
+│
+├─ app.py                    # Streamlit frontend + orchestration
+├─ acquire.py                # API fetch & OCR extraction functions
+├─ normalize.py              # Ingredient and nutrient normalization
+├─ score.py                  # Health score calculation & explanation
+├─ requirements.txt          # Python dependencies
+├─ run.log                   # Full log of last run
+├─ trace_example.txt         # Short trace: ingest → normalize → score → explain
+├─ samples/
+│   ├─ outputs/              # JSON/CSV outputs for 3+ products
+│   └─ screenshots/          # Screenshots of UI pages
+├─ config_template.json      # Sample configuration template
+└─ README.md
+```
+
 ---
 
-### Module Roles & I/O Schemas
+## Module I/O Schemas
 
-#### `acquire.py`
-- **Input:** query (Barcode, Product Name, or Image URL)
+### `acquire.py`
+- **Input:** Barcode, Product Name, or Image URL (OCR)
 - **Output:** `raw_product_data` (dict)
   ```json
   {
-     "name": "Oreo Biscuits",
-     "sugar": 38,
-     "fat": 20,
-     "salt": 0.5
+    "product_name": "Ready Salted Crisps",
+    "brands": "Lay's",
+    "ingredients_text": "Potatoes, sunflower oil, salt",
+    "nutriments": {
+        "energy-kcal_100g": 133,
+        "fat_100g": 8.5,
+        "salt_100g": 2.4
+    },
+    "image_url": "https://c8.alamy.com/comp/BA63M6/nutritional-label-on-food-packaging-for-ready-salted-crisps-BA63M6.jpg"
   }
   ```
 
-#### `normalize.py`
-- **Input:** `raw_product_data` (dict)
-- **Output:** `normalized_data` (dict, floats)
+### `normalize.py`
+- **Input:** `raw_product_data` or OCR text
+- **Output:** `normalized_data` (dict)
   ```json
   {
-     "sugar": 38.0,
-     "fat": 20.0,
-     "salt": 0.5
+    "ingredients": ["potatoes", "fat", "salt"],
+    "nutrients": {
+        "energy_kcal": 133.0,
+        "fat_g": 8.5,
+        "salt_g": 2.4
+    }
   }
   ```
 
-#### `score.py`
+### `score.py`
 - **Input:** `normalized_data` (dict)
-- **Output:** `health_score` (int, 0–100)
-
-#### `app.py`
-- Integrates all modules
-- Provides Streamlit UI for user interaction
-- Logs events into `run.log`
+- **Output:** Health score details
+  ```json
+  {
+    "score": 50,
+    "band": "Moderate",
+    "grade": "C",
+    "drivers": ["High sodium: 24 g salt/100g"],
+    "evidence": ["Sodium > 900 mg/100g"]
+  }
+  ```
 
 ---
+
+## 📊 Health Score Design
+
+- **Range:** 0 – 100 (higher = healthier)
+- **Bands:**
+  - 80–100 → Healthy (A)
+  - 65–79 → Lightly Healthy (B)
+  - 50–64 → Moderate (C)
+  - 35–49 → Less Healthy (D)
+  - 0–34 → Unhealthy (E)
+- **Negative Points:** Energy (kcal), sugar (total & added), saturated fat, salt (sodium), ultra-processed food penalty
+- **Positive Points:** Fiber, protein, fruit/vegetable content
+- **Score:** Normalized to 0–100 and mapped to Nutri-Score grades
+
+---
+
+## 🖥️ Streamlit UI Features
+
+- **Sidebar Search Modes:** Barcode, Product Name, Image URL (OCR)
+- **Displays:** Normalized ingredients, nutritional info per 100g, health score + band, drivers & evidence (expandable panel)
+- **Logs:** Saved at `run.log`
+  ```
+  2025-09-07 15:10:12 [INFO] [SCORE] Result: 50, Band: Moderate, Grade: C
+  ```
+
+---
+
+## 🗂 Sample Output
+
+```json
+{
+  "product_name": "Ready Salted Crisps",
+  "nutrients": {
+    "energy_kcal": 133,
+    "fat_g": 8.5,
+    "salt_g": 2.4
+  },
+  "score": {
+    "value": 50,
+    "band": "Moderate",
+    "grade": "C"
+  },
+  "explanation": {
+    "drivers": ["High sodium: 24 g salt/100g"],
+    "evidence": ["Sodium > 900 mg/100g"]
+  }
+}
+```
+
+---
+
+## 🔖 Config Sample (`config_template.json`)
+
+```json
+{
+  "tesseract_path": "D:/Tesseract/tesseract.exe",
+  "openfoodfacts_url": "https://world.openfoodfacts.org/api/v0/product",
+  "ocr_languages": ["eng"]
+}
+```
+---
+
 ### 🗂 Run Artifacts
 
 This repository includes:
@@ -58,25 +151,6 @@ This repository includes:
 - `trace_example.txt` → Short trace of a single run (ingest → normalize → score → explain).
 - `samples/outputs/` → JSON/CSV outputs for 3 example products.
 - `samples/screenshots/` → Screenshots of the UI showing results.
-<!-- - `REFERENCES.md` → Source/Reference manifest (databases used, limitations). -->
----
-
-### 📊 Scoring Design
-
-- **Score Range:** 0 – 100
-
-#### Bands
-- 🟢 80–100 → Healthy
-- 🟡 50–79 → Moderate
-- 🔴 0–49 → Unhealthy
-
-#### Guardrails
-- Score capped at 100 (max) and floored at 0 (min)
-
-#### Deductions
-- sugar × 0.5
-- fat × 0.3
-- salt × 1.0
 
 ---
 
@@ -100,18 +174,6 @@ This repository includes:
     ```bash
     streamlit run app.py
     ```
-
----
-
-### Outputs
-
-- **Streamlit UI:** Shows live Health Score results
-- **Logs:** Saved at `logs/app_log.txt`
-
-  Example log entry:
-  ```
-  2025-09-05 18:50:12 [INFO] [Score] Final Health Score = 59
-  ```
 
 ---
 
