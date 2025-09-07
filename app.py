@@ -96,32 +96,45 @@ if search_mode == "Barcode":
 # --- Product name search ---
 elif search_mode == "Product Name":
     query = st.sidebar.text_input("Enter product name:")
+
+    # Search results button
     if st.sidebar.button("Search Products", use_container_width=True):
-        with st.spinner("Searching products..."):
-            results = search_product_name(query, page_size=3)
-            if results:
-                # Display product images and options
-                options = []
-                for p in results:
-                    # Create label with product name + brand
-                    label = f"{p.get('product_name', 'No Name')} [{p.get('brands', 'No Brand')}]"
-                    options.append(label)
+        results = search_product_name(query, page_size=3)
+        if results:
+            st.session_state.search_results = results
+            st.session_state.selected_product_idx = 0
+        else:
+            st.session_state.search_results = []
+            st.session_state.selected_product_idx = None
+            st.error("No products found.")
 
-                # One radio for all products
-                selected_idx = st.radio("Select a product:", range(len(options)), format_func=lambda i: options[i])
-                
-                # Access the selected product data
-                product = results[selected_idx]
-                st.session_state.product = product
+    # Check if results exist in session_state
+    results = st.session_state.get("search_results", [])
+    if results:
+        # Create display labels
+        options = [f"{p.get('product_name', 'No Name')} [{p.get('brands', 'No Brand')}]" for p in results]
 
-                # Display selected product image & info
-                st.success(f"Selected: {product.get('product_name', '')}")
-                st.image(product.get('image_url', ""), width=240)
-                log(f"[INGEST] Product search: {query} → Selected {product.get('product_name', '')}")
+        # Initialize selected index
+        if "selected_product_idx" not in st.session_state or st.session_state.selected_product_idx is None:
+            st.session_state.selected_product_idx = 0
 
-            else:
-                log(f"[INGEST] Product search failed: {query}")
-                st.error("No products found.")
+        # Radio selection
+        selected_idx = st.radio(
+            "Select a product:",
+            range(len(options)),
+            format_func=lambda i: options[i],
+            index=st.session_state.selected_product_idx
+        )
+
+        # Update session state
+        st.session_state.selected_product_idx = selected_idx
+        product = results[selected_idx]
+        st.session_state.product = product
+
+        # Display product info
+        st.success(f"Selected: {product.get('product_name', '')}")
+        st.image(product.get('image_url', ""), width=240)
+        log(f"[INGEST] Product search: {query} → Selected {product.get('product_name', '')}")
 
 # --- Image/OCR input ---
 elif search_mode == "Image URL":
@@ -170,14 +183,37 @@ if (st.session_state.nutri and st.session_state.ingreds) or st.session_state.pro
     if st.button("Analyze Health Score", key="score_button"):
         nutri = st.session_state.nutri
         log(f"[SCORE] Calculation started")
-        score, grade,band, drivers, evidence = calculate_score(nutri)
+        score, grade, band, drivers, evidence = calculate_score(nutri)
+
+        # Display score
         st.markdown(
             f"<h2 style='background-color:{color_band(band)}; color:#16181b; padding:0.4em 1em; border-radius:10px; text-align:center;'>{score} : {band}</h2>",
             unsafe_allow_html=True
         )
+
+        # # --- Generate trace_example.txt ---
+        # try:
+        #     product_name = st.session_state.product.get("product_name", "OCR Input") if st.session_state.product else "OCR Input"
+
+        #     with open("trace_example.txt", "w") as f:
+        #         f.write(f"Product = {product_name}\n")
+        #         f.write("Step 1: acquire → raw nutrition data\n")
+        #         f.write(str(st.session_state.raw_nutrition_data if "raw_nutrition_data" in st.session_state else "N/A") + "\n")
+        #         f.write("Step 2: normalize → standardized floats\n")
+        #         f.write(str(st.session_state.normalized_nutrition if "normalized_nutrition" in st.session_state else "N/A") + "\n")
+        #         f.write("Step 3: score → computed health_score = " + str(score) + "\n")
+        #         f.write(f"Step 4: explain → {band} (grade {grade})\n")
+        #         f.write("Drivers / Evidence:\n")
+        #         f.write(str(drivers) + "\n")
+        #         f.write(str(evidence) + "\n")
+        # except Exception as e:
+        #     log(f"[TRACE ERROR] Failed to write trace: {e}")
+        
+        # Explanation panel
         with st.expander("Score Drivers & Evidence", expanded=True):
             for d, e in zip(drivers, evidence):
                 st.markdown(f"<div style='color:#ffd600'><b>{d}</b><br><i>{e}</i></div>", unsafe_allow_html=True)
+
         log(f"[SCORE] Result: {score}, Band: {band}, Grade: {grade}")
         log(f"[EXPLAIN] Drivers: {drivers}")
         log(f"[EXPLAIN] Evidence: {evidence}")
