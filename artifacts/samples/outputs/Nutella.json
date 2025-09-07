@@ -1,21 +1,19 @@
 {
-  "energy_kcal": 539,
-  "sugars_g": 56.3,
-  "salt_g": 0.107,
-  "fat_g": 30.9,
-  "saturated_fat_g": 10.6,
-  "fiber_g": 0,
-  "proteins_g": 6.3
-}
-
-{
   "product_name": "Nutella",
-  "score": 34,
-  "band": "Unhealthy",
-  "grade": "E"
-}
-
-{
+  "nutrients": {
+    "energy_kcal": 539,
+    "sugars_g": 56.3,
+    "salt_g": 0.107,
+    "fat_g": 30.9,
+    "saturated_fat_g": 10.6,
+    "fiber_g": 0,
+    "proteins_g": 6.3
+  },
+  "score": {
+    "value": 34,
+    "band": "Unhealthy",
+    "grade": "E"
+  },
   "explanation": {
     "negative_points": {
       "sugars": {
@@ -32,6 +30,11 @@
         "points": 5,
         "value": 30.9,
         "thresholds": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+      },
+      "salt": {
+        "points": 1,
+        "value": 0.107,
+        "thresholds": [0.09, 0.18, 0.27, 0.36, 0.45, 0.54, 0.63, 0.72, 0.81, 0.9]
       }
     },
     "positive_points": {
@@ -39,6 +42,16 @@
         "points": 1,
         "value": 6.3,
         "thresholds": [1.6, 3.2, 4.8, 6.4, 8.0]
+      },
+      "fiber": {
+        "points": 0,
+        "value": 0,
+        "thresholds": [0.9, 1.9, 2.8, 3.7, 4.7]
+      },
+      "fruit_veg_pct": {
+        "points": 0,
+        "value": 0,
+        "thresholds": [60, 80]
       }
     }
   }
