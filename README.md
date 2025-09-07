@@ -8,7 +8,7 @@ Users can search by Barcode, Product Name, or Image URL. The app standardizes nu
 ## 📄 Documentation
 
 For detailed step-by-step project documentation, see the full report here:  
-[Packaged-Food-Rating-App Documentation](docs\Packaged_Food_Rating_Docs.pdf)
+[Documentation](docs\Packaged_Food_Rating_Docs.pdf)
 
 ## 🎬 Demo Video
 
@@ -207,8 +207,19 @@ If product data looks stale:
 - Future: add support for multiple languages and offline caching.
 ---
 
-### 📚 References & Citations
+## 📚 Source / References
 
+- **Python**: 3.11.6  
+- **Streamlit**: 1.38.0  
+- **OpenCV**: 4.10.0  
+- **Tesseract OCR**: 5.3.4  
+
+**External References:**
 - [WHO Guidelines on Sugars Intake for Adults and Children](https://www.who.int/publications/i/item/9789241549028)
 - [FDA – Guidance for Industry: Nutrition Labeling Manual](https://www.fda.gov/media/81606/download)
-- [FSSAI Nutritional Standards](https://www.fssai.gov.in/)
+- [FSSAI Nutritional Standards](https://www.fssai.gov.in/) 
+
+**Licensing Notes:**
+- Libraries: All core libraries (Streamlit, OpenCV, NumPy, Pandas) are open-source under permissive MIT/BSD-style licenses.
+- OpenFoodFacts API is licensed under the Open Database License (ODbL).
+- WHO and FSA nutrition guidelines are publicly available for non-commercial, educational use.
